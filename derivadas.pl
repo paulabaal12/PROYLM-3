@@ -1,10 +1,12 @@
 % Derivadas básicas
 derivada(C, _, 0) :- number(C).  % Derivada de constantes
-derivada(x, X, 1).  % Derivada de la variable X
+derivada(x, _, 1).  % Derivada de la variable x
 
 % Regla de la suma
 
+
 % Regla de la resta
+
 
 % Regla del producto
 derivada(F * G, X, F * DG + G * DF) :- 
@@ -24,7 +26,11 @@ derivada(tan(F), X, sec(F) * sec(F) * DF) :-
 derivada(cot(F), X, -csc(F) * csc(F) * DF) :- 
     derivada(F, X, DF).
 
-
 % Derivada de la función arcotangente
 derivada(atan(F), X, DF / (1 + F * F)) :-
     derivada(F, X, DF).
+
+% Derivada de una potencia (F^N)
+derivada(F ** N, X, N * F ** (N - 1) * DF) :-
+    derivada(F, X, DF).
+
