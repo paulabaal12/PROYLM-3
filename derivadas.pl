@@ -18,6 +18,14 @@ derivada(F / G, X, (DF * G - F * DG) / (G * G)) :-
     derivada(F, X, DF), 
     derivada(G, X, DG).
 
+% Función exponencial
+derivada(exp(F), X, exp(F) * DF) :-
+    derivada(F, X, DF).
+
+% Función logaritmo natural
+derivada(log(F), X, DF / F) :-
+    derivada(F, X, DF).
+
 % Derivada de la función tangente
 derivada(tan(F), X, sec(F) * sec(F) * DF) :- 
     derivada(F, X, DF).
@@ -33,4 +41,5 @@ derivada(atan(F), X, DF / (1 + F * F)) :-
 % Derivada de una potencia (F^N)
 derivada(F ** N, X, N * F ** (N - 1) * DF) :-
     derivada(F, X, DF).
+
 
