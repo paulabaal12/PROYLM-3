@@ -49,3 +49,8 @@ derivada(atan(F), X, DF / (1 + F * F)) :-
 % Derivada de una potencia (F^N)
 derivada(F ** N, X, N * F ** (N - 1) * DF) :-
     derivada(F, X, DF).
+
+
+% Derivada de la función cotangente
+derivada(cot(F), X, -csc(F) * csc(F) * DF) :- 
+    derivada(F, X, DF).
