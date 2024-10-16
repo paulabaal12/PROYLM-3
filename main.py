@@ -1,5 +1,13 @@
 import subprocess
 
+"""
+Este script procesa funciones y las evalúa en Prolog para calcular sus respectivas derivadas.
+
+Referencias:
+- La notación utilizada para algunas derivadas fue tomada de:
+https://gist.github.com/tokkenno/8038482
+"""
+
 def execute_prolog(query, prolog_script):
     #Se realiza la consulta a Prolog
     formatted_query = f"{query}, write(D), nl."
