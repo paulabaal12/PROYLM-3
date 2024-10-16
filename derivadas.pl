@@ -30,12 +30,12 @@ derivada(exp(F), X, exp(F) * DF) :-
 derivada(ln(F), X, DF / F) :-
     derivada(F, X, DF).
 
-% Función seno
-derivada(sen(F), X, cos(F) * DF) :-
+% Derivada de la función seno
+derivada(sen(F), X, cos(F) * DF) :- 
     derivada(F, X, DF).
 
-% Función coseno
-derivada(cos(F), X, -sen(F) * DF) :-
+% Derivada de la función coseno
+derivada(cos(F), X, -sen(F) * DF) :- 
     derivada(F, X, DF).
 
 % Derivada de la función tangente
